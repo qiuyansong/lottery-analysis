@@ -1,6 +1,6 @@
 import { DaletouRecord, ShuangseqiuRecord } from '../types';
 import { calculateOddEvenRatio, calculateSizeRatio, calculateZoneDistribution } from '../utils/analysis';
-import { PieChart, Pie, Cell, ResponsiveContainer, Legend, Tooltip } from 'recharts';
+import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from 'recharts';
 
 interface ComprehensiveStatsProps {
   type: 'daletou' | 'shuangseqiu';
@@ -64,7 +64,7 @@ export default function ComprehensiveStats({ type, records }: ComprehensiveStats
                 fill="#8884d8"
                 dataKey="value"
               >
-                {oddEvenData.map((entry, index) => (
+                {oddEvenData.map((_, index) => (
                   <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
                 ))}
               </Pie>
@@ -95,7 +95,7 @@ export default function ComprehensiveStats({ type, records }: ComprehensiveStats
                 fill="#8884d8"
                 dataKey="value"
               >
-                {sizeData.map((entry, index) => (
+                {sizeData.map((_, index) => (
                   <Cell key={`cell-${index}`} fill={COLORS[(index + 2) % COLORS.length]} />
                 ))}
               </Pie>
@@ -126,7 +126,7 @@ export default function ComprehensiveStats({ type, records }: ComprehensiveStats
                 fill="#8884d8"
                 dataKey="value"
               >
-                {zoneData.map((entry, index) => (
+                {zoneData.map((_, index) => (
                   <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
                 ))}
               </Pie>
