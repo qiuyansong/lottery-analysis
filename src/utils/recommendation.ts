@@ -1,5 +1,4 @@
 import { NumberStats, DaletouRecord, ShuangseqiuRecord } from '../types';
-import { calculateOddEvenRatio, calculateSizeRatio } from './analysis';
 
 // 推荐号码组合
 export interface RecommendedNumbers {
